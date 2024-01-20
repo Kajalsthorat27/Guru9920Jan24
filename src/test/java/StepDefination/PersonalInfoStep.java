@@ -39,4 +39,15 @@ protected static PersonalInfo personalinfo ;
 	public void user_enter_password_and_confirm_password_and_click_on_login_button() {
 		personalinfo.validatePass("abcd123", "abcd123");
 	}
+	@Given("User successfully registered page")
+	public void user_successfully_registered_page() {
+		personalinfo.getURL();
+	  
+	}
+
+	@Given("click on sign in page")
+	public void click_on_sign_in_page() {
+		personalinfo.signIn();
+	    
+	}
 }

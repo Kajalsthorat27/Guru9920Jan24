@@ -6,6 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import BaseLayer.BaseClass;
 import UtliesLayer.Wait;
+import io.opentelemetry.exporter.logging.SystemOutLogRecordExporter;
 
 public class PersonalInfo extends BaseClass{
 	
@@ -46,8 +47,13 @@ public class PersonalInfo extends BaseClass{
 	@FindBy(name="confirmPassword")
 	private WebElement confpass;
 
-//	@FindBy(name="submit")
-//	private WebElement submit;
+    @FindBy(name="submit")
+	private WebElement submit;
+    
+    @FindBy(xpath="//a[text()=' sign-in ']")
+    private WebElement signin;
+    
+    
 
 	
 	
@@ -88,7 +94,17 @@ public class PersonalInfo extends BaseClass{
       public void validatePass(String password, String ConfPass ){
     	  Wait.sendKeys(pass, password);
     	  Wait.sendKeys(confpass, ConfPass);
+    	  Wait.click(submit);
     	  
+      }
+      public void signIn () {
+    	  Wait.click(signin);
+    	  
+      }
+      
+      public void getURL() {
+    	  String url=driver.getCurrentUrl();
+    	  System.out.println(url);
       }
 
 }
