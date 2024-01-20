@@ -37,6 +37,19 @@ public class PersonalInfo extends BaseClass{
 	@FindBy(name="country")
 	private WebElement count;
 	
+	@FindBy(name="email")
+	private WebElement email;
+
+	@FindBy(name="password")
+	private WebElement pass;
+
+	@FindBy(name="confirmPassword")
+	private WebElement confpass;
+
+//	@FindBy(name="submit")
+//	private WebElement submit;
+
+	
 	
 	
 	public PersonalInfo()
@@ -65,6 +78,17 @@ public class PersonalInfo extends BaseClass{
       {
     	Wait.countrydropdown(count, country);
     	  
-    			  
+     }
+      
+      public void userInfor(String Email){
+    Wait.sendKeys(email, Email);
+    
+    	    
       }
+      public void validatePass(String password, String ConfPass ){
+    	  Wait.sendKeys(pass, password);
+    	  Wait.sendKeys(confpass, ConfPass);
+    	  
+      }
+
 }

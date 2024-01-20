@@ -3,6 +3,7 @@ package StepDefination;
 import BaseLayer.BaseClass;
 import PageLayer.PersonalInfo;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class PersonalInfoStep extends BaseClass{
@@ -28,5 +29,14 @@ protected static PersonalInfo personalinfo ;
 	@When("click on country dropdown")
 	public void click_on_country_dropdown() {
 		personalinfo.Countrydropdown("INDIA");
+	}
+	
+	@Then("user enter username")
+	public void user_enter_username() {
+		personalinfo.userInfor("abcd");
+	}
+	@Then("user enter password and confirm password and click on login button.")
+	public void user_enter_password_and_confirm_password_and_click_on_login_button() {
+		personalinfo.validatePass("abcd123", "abcd123");
 	}
 }
