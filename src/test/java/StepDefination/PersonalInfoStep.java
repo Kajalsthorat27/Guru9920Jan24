@@ -19,4 +19,14 @@ protected static PersonalInfo personalinfo ;
 		personalinfo.PersonalInfoFunctionality("Kajal", "Thorat", "987654356", "Kajal@gmail.com");
 		
 	}
+	
+	@When("User enter Address ,city ,state, zip code")
+	public void user_enter_address_city_state_zip_code() {
+	   
+		personalinfo.mailinginformation("F.S.road", "Mumbai", "MH", "400056");
+	}
+	@When("click on country dropdown")
+	public void click_on_country_dropdown() {
+		personalinfo.Countrydropdown("INDIA");
+	}
 }

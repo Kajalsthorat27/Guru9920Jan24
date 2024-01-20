@@ -22,6 +22,22 @@ public class PersonalInfo extends BaseClass{
 	@FindBy(name="userName")
 	private WebElement userName;
 	
+	@FindBy(name="address1")
+	private WebElement add1;
+	
+	@FindBy(name="city")
+	private WebElement City;
+	
+	@FindBy(name="state")
+	private WebElement State;
+	
+	@FindBy(name="postalCode")
+	private WebElement zipcode;
+	
+	@FindBy(name="country")
+	private WebElement count;
+	
+	
 	
 	public PersonalInfo()
 	{
@@ -34,6 +50,21 @@ public class PersonalInfo extends BaseClass{
 		Wait.sendKeys(lastName, LastName);
 		Wait.sendKeys(phone, MObNo);
 		Wait.sendKeys(userName, UserName);
+		
 	}
-
+      public void mailinginformation(String Add1,String city,String state,String ZipCode)
+      {
+    	 Wait.sendKeys(add1, Add1);
+    	 Wait.sendKeys(City, city);
+    	 Wait.sendKeys(State, state);
+    	 Wait.sendKeys(zipcode, ZipCode);
+    	 
+    	  
+      }
+      public void Countrydropdown(String country)
+      {
+    	Wait.countrydropdown(count, country);
+    	  
+    			  
+      }
 }
