@@ -11,3 +11,7 @@ Feature: Guru99 Application
   Scenario: Guru99 user Information
     Then user enter username
     Then user enter password and confirm password and click on login button.
+    
+    Scenario: capture the text 
+    Given User successfully registered page
+    And click on sign in page
