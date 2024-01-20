@@ -7,3 +7,7 @@ Feature: Guru99 Application
   Scenario: Guru99 mailing information
     When User enter Address ,city ,state, zip code
     And click on country dropdown
+
+  Scenario: Guru99 user Information
+    Then user enter username
+    Then user enter password and confirm password and click on login button.
